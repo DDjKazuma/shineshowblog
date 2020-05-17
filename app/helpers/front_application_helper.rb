@@ -1,0 +1,2 @@
+module FrontApplicationHelper
+end

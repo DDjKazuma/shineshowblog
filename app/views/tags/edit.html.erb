@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <!--        <form method="post" action="<%#= users_url %>">-->
+        <%= form_tag tag_path(@tag.id), method: :put do %>
+          <div class="card-header">
+            <h4 class="card-title">
+              编辑标签
+            </h4>
+          </div>
+          <div class="card-content">
+            <div class="form-group">
+              <%#= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+              <!--              <label>标签名称</label>-->
+              <%= label_tag "tag_name", "名称" %>
+              <!--              <input name="name" type="text" placeholder="请输入标签名称" class="form-control">-->
+              <%= text_field_tag "name",@tag.name, class: "form-control", placeholder: "请输入标签名称" %>
+            </div>
+            <div class="form-group">
+              <!--              <label>备注</label>-->
+              <%= label_tag "tag_remark", '备注' %>
+              <!--              <input name="remark" type="text" placeholder="请输入标签备注" class="form-control">-->
+              <%= text_field_tag "remark",@tag.remark, class: "form-control", placeholder: "请输入标签备注" %>
+            </div>
+            <!--            <button type="submit" class="btn btn-fill btn-info">提交</button>-->
+            <%= button_tag "提交", type: "submit", class: "btn btn-fill btn-info" %>
+          </div>
+        <% end %>
+        <!--        </form>-->
+      </div> <!-- end card -->
+    </div> <!--  end col-md-6  -->
+
+  </div> <!-- end row -->
+</div>

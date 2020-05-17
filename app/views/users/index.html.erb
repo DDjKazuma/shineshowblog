@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Table with Links</h4>
+          <p class="category">Here is a subtitle for this table</p>
+        </div>
+        <div class="card-content table-responsive table-full-width">
+          <table class="table">
+            <thead>
+            <tr>
+              <th class="text-center">ID</th>
+              <th>用户名</th>
+              <th>邮箱</th>
+              <th>职业</th>
+              <th>头像</th>
+              <th>背景图片</th>
+              <th>个人简介</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td class="text-center"><%= user.id %></td>
+              <td><%= user.username %></td>
+              <td><%= user.email %></td>
+              <td><%= user.profession %></td>
+              <td>
+                <% if user.avatar.attached? %>
+                  <div class="img-container">
+                    <%= image_tag user.avatar.variant resize_to_limit: [200, 200] %>
+                  </div>
+                <% end %>
+                  </td>
+              <td>
+                <% if user.background.attached? %>
+                  <div class="img-container">
+                    <%= image_tag user.background.variant(resize_to_limit: [200, 200]) %>
+                  </div>
+                <% end %>
+              </td>
+              <td><%= user.introduction %></td>
+              <td class="td-actions text-right">
+<!--                <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">-->
+<!--                  <i class="ti-user"></i>-->
+<!--                </a>-->
+<!--                <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">-->
+<!--                  <i class="ti-pencil-alt"></i>-->
+<!--                </a>-->
+<!--                <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">-->
+<!--                  <i class="ti-close"></i>-->
+<!--                </a>-->
+                <%= link_to "重置密码", reset_password_path(user.id), method: :put %>
+              </td>
+            </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Paper Dashboard Headings</h4>
+          <p class="category">Created using <a href="https://www.google.com/fonts/specimen/Muli">Muli</a> Font Family</p>
+        </div>
+        <div class="card-content">
+          <div class="typo-line">
+            <h3><p class="category">标题</p><%= @article.title %></h3>
+          </div>
+          <div class="typo-line">
+            <p><span class="category">内容</span><%= @article.content %></p>
+          </div>
+          <div class="typo-line">
+            <p class="category">配图</p><div class="row">
+            <% if @article.picture.attached? %>
+              <div class="image-container">
+                <%= image_tag @article.picture.variant(resize_to_limit: [200, 400]) %>
+              </div>
+            <% end %>
+          </div>
+          </div>
+          <div class="typo-line">
+            <h5><p class="category">作者</p><%= @article.user.username %></h5>
+          </div>
+          <div class="typo-line">
+            <h5><p class="category">创建日期</p><%= @article.created_at %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
