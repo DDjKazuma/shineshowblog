@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# shineshowblog
+基于ruby on rails的博客系统
+>>>>>>> 9364ac84bd886818d1779ce7ec678a9210160826
